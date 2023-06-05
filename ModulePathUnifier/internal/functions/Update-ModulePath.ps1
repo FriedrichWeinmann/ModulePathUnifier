@@ -11,11 +11,12 @@
 		
 		Creates a central module path and updates the profile to load it.
 	#>
+	[Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSUseShouldProcessForStateChangingFunctions", "")]
 	[CmdletBinding()]
 	param ()
 	
 	process {
-		if (-not (Test-IsWindows)) { return }
+		if (-not (Test-IsEnabled)) { return }
 
 		if (-not (Test-Path $script:modulePath)) {
 			$null = New-Item -Path $script:modulePath -ItemType Directory -Force

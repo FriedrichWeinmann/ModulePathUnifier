@@ -17,7 +17,7 @@
 		
 	)
 	process {
-		if (-not (Test-IsWindows)) { return }
+		if (-not (Test-IsEnabled)) { return }
 
 		$caller = (Get-PSCallStack)[1]
 
@@ -29,6 +29,7 @@
 		}
 		$moduleBase = $module.ModuleBase
 		if (-not $moduleBase) { return }
+		if ($moduleBase -like "$env:ProgramFiles*") { return }
 
 		$targetRoot = Join-Path -Path $script:modulePath -ChildPath "$($module.Name)\$($module.Version)"
 		if (Test-Path -Path "$targetRoot\$($module.Name).psd1") { return }
