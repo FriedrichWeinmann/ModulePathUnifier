@@ -28,7 +28,11 @@ RequiredModules = @(
 Then during your own module's import, call `Copy-MpuModule`:
 
 ```powershell
+# Just the module itself
 Copy-MpuModule
+
+# Also include all the dependencies
+Copy-MpuModule -Recurse
 ```
 
 That's it.
