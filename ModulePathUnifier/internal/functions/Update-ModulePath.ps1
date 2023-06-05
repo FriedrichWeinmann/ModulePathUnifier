@@ -15,7 +15,7 @@
 	param ()
 	
 	process {
-		if (-not (Test-IsWindows)) { return }
+		if (-not (Test-IsEnabled)) { return }
 
 		if (-not (Test-Path $script:modulePath)) {
 			$null = New-Item -Path $script:modulePath -ItemType Directory -Force
