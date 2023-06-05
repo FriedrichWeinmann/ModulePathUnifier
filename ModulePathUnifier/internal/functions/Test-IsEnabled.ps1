@@ -16,6 +16,7 @@
 		
 		Returns, whether the module should act.
 	#>
+	[OutputType([bool])]
 	[CmdletBinding()]
 	param ()
 
