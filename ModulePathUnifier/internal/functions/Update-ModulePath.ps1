@@ -11,6 +11,7 @@
 		
 		Creates a central module path and updates the profile to load it.
 	#>
+	[Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSUseShouldProcessForStateChangingFunctions", "")]
 	[CmdletBinding()]
 	param ()
 	
